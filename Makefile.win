@@ -1,0 +1,61 @@
+# Project: Final_Project
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = mingw32-c++.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o Displayf.o symmat.o ident.o det2.o det3.o adj3.o adj2.o inv3.o inv2.o sol.o sol3.o
+LINKOBJ  = main.o Displayf.o symmat.o ident.o det2.o det3.o adj3.o adj2.o inv3.o inv2.o sol.o sol3.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Final_Project.exe
+CXXFLAGS = $(CXXINCS) -g3 -g
+CFLAGS   = $(INCS) -g3 -g
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Displayf.o: Displayf.cpp
+	$(CPP) -c Displayf.cpp -o Displayf.o $(CXXFLAGS)
+
+symmat.o: symmat.cpp
+	$(CPP) -c symmat.cpp -o symmat.o $(CXXFLAGS)
+
+ident.o: ident.cpp
+	$(CPP) -c ident.cpp -o ident.o $(CXXFLAGS)
+
+det2.o: det2.cpp
+	$(CPP) -c det2.cpp -o det2.o $(CXXFLAGS)
+
+det3.o: det3.cpp
+	$(CPP) -c det3.cpp -o det3.o $(CXXFLAGS)
+
+adj3.o: adj3.cpp
+	$(CPP) -c adj3.cpp -o adj3.o $(CXXFLAGS)
+
+adj2.o: adj2.cpp
+	$(CPP) -c adj2.cpp -o adj2.o $(CXXFLAGS)
+
+inv3.o: inv3.cpp
+	$(CPP) -c inv3.cpp -o inv3.o $(CXXFLAGS)
+
+inv2.o: inv2.cpp
+	$(CPP) -c inv2.cpp -o inv2.o $(CXXFLAGS)
+
+sol.o: sol.cpp
+	$(CPP) -c sol.cpp -o sol.o $(CXXFLAGS)
+
+sol3.o: sol3.cpp
+	$(CPP) -c sol3.cpp -o sol3.o $(CXXFLAGS)
