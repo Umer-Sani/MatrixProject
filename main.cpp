@@ -127,4 +127,5 @@ else
 {cout<<"Please enter valid input from (1-3)";
 continue;}
 }
+return 0;
 }
